@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
-import { ExternalLink, Github, Filter } from 'lucide-react';
-import { portfolioData } from '../data/portfolio';
+import React, { useState } from "react";
+import { ExternalLink, Github, Filter } from "lucide-react";
+import { portfolioData } from "../data/portfolio";
 
 const Projects = () => {
   const { projects } = portfolioData;
-  const [filter, setFilter] = useState('all');
-  
-  const allTags = Array.from(new Set(projects.flatMap(project => project.tags)));
-  
-  const filteredProjects = filter === 'all' 
-    ? projects 
-    : projects.filter(project => project.tags.includes(filter));
+  const [filter, setFilter] = useState("all");
 
-  const featuredProjects = projects.filter(project => project.featured);
+  const allTags = Array.from(
+    new Set(projects.flatMap((project) => project.tags))
+  );
+
+  const filteredProjects =
+    filter === "all"
+      ? projects
+      : projects.filter((project) => project.tags.includes(filter));
+
+  // const featuredProjects = projects.filter(project => project.featured);
 
   return (
     <section id="projects" className="py-20 bg-gray-800/50">
@@ -23,18 +26,19 @@ const Projects = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-4"></div>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and passion for development
+            Here are some of my recent projects that showcase my skills and
+            passion for development
           </p>
         </div>
 
         {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           <button
-            onClick={() => setFilter('all')}
+            onClick={() => setFilter("all")}
             className={`px-4 py-2 rounded-full transition-all duration-200 ${
-              filter === 'all' 
-                ? 'bg-cyan-500 text-white' 
-                : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-cyan-400'
+              filter === "all"
+                ? "bg-cyan-500 text-white"
+                : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-cyan-400"
             }`}
           >
             <Filter className="inline mr-2" size={16} />
@@ -45,9 +49,9 @@ const Projects = () => {
               key={index}
               onClick={() => setFilter(tag)}
               className={`px-4 py-2 rounded-full transition-all duration-200 ${
-                filter === tag 
-                  ? 'bg-cyan-500 text-white' 
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-cyan-400'
+                filter === tag
+                  ? "bg-cyan-500 text-white"
+                  : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-cyan-400"
               }`}
             >
               {tag}
@@ -57,7 +61,7 @@ const Projects = () => {
 
         {/* Featured Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="group bg-gray-900/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 hover:border-cyan-400/30 transition-all duration-300 hover:transform hover:scale-105"
@@ -70,7 +74,7 @@ const Projects = () => {
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
+
                 {/* Project Links - Show on Hover */}
                 <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                   <a
@@ -109,7 +113,7 @@ const Projects = () => {
                 <p className="text-gray-300 text-sm mb-4 line-clamp-3 leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 {/* Tech Tags */}
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
@@ -135,7 +139,9 @@ const Projects = () => {
             href="#contact"
             onClick={(e) => {
               e.preventDefault();
-              document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+              document
+                .querySelector("#contact")
+                ?.scrollIntoView({ behavior: "smooth" });
             }}
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-cyan-500/25"
           >

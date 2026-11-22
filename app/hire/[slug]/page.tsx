@@ -87,7 +87,7 @@ export default function HirePage({ params }: { params: { slug: string } }) {
             <p className="text-gray-300 leading-relaxed">
               Based in Chandigarh, India. I am open to full-time senior roles, working remotely or
               on-site anywhere in India. You can also{' '}
-              <a href="/resume.pdf" className="text-cyan-400 hover:underline">
+              <a href="/Amit-20Nov2026.pdf" className="text-cyan-400 hover:underline">
                 download my resume
               </a>
               .

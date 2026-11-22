@@ -57,9 +57,9 @@ This email was sent from your portfolio contact form.
 2. Replace the placeholder values with your actual EmailJS credentials:
 
 ```env
-VITE_EMAILJS_SERVICE_ID=service_abc123
-VITE_EMAILJS_TEMPLATE_ID=template_xyz789
-VITE_EMAILJS_PUBLIC_KEY=abcDEF123xyz
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_abc123
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_xyz789
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=abcDEF123xyz
 ```
 
 ## Step 6: Test the Form
